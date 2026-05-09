@@ -1,0 +1,55 @@
+/* src/pages/Auth.css */
+
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../pages/images/Arabian-Cement_Home.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+
+.auth-box {
+  background-color: #ffffffc4;
+  padding: 30px 40px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.auth-box h2 {
+  margin-bottom: 20px;
+}
+
+.auth-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-box input {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.auth-box button {
+  background-color: #100455;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.auth-box p {
+  margin-top: 15px;
+}
+
