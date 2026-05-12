@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 const pool = require("./Database"); // استخدم pool مباشرة بدون { poolPromise }
 
 const app = express();
@@ -21,17 +22,24 @@ app.use("/orders", require("./Routes/order"));
 app.use("/wallet", require("./Routes/wallet"));
 app.use("/gate", require("./Routes/gate"));
 
-// Root
-app.get("/", (req, res) => res.send("🚀 API is running!"));
+// Serve React build
+const buildPath = path.join(__dirname, "build");
+app.use(express.static(buildPath));
 
-// Test DB connection before starting server
+// Catch-all route for React (any path not starting with /api)
+app.get(/^\/(?!api).*/, (req, res) => {
+  res.sendFile(path.join(buildPath, "index.html"));
+});
+
+// Root API اختياري للتأكد
+app.get("/api", (req, res) => res.send("🚀 API is running!"));
+
+// Start server بعد التأكد من DB
 async function startServer() {
   try {
-    // تجربة استعلام بسيط للتأكد من الاتصال
     const [rows] = await pool.execute("SELECT 1 AS Test");
     console.log("✅ DB Connected:", rows);
 
-    // Start server بعد التأكد من DB
     app.listen(port, () => console.log(`Server listening on port ${port}`));
   } catch (err) {
     console.error("❌ Failed to connect to DB:", err.message || err);
