@@ -1,0 +1,52 @@
+.register-container {
+  height: 100vh;
+  background-image: url("../pages/images/Arabian-Cement_Home.jpg"); /* تأكد من وجود الصورة هنا */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.register-box {
+  background-color: rgba(255, 255, 255, 0.712);
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.register-box h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.register-box input {
+  width: 95%;
+  padding: 12px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  direction: ltr;
+}
+
+.register-box button {
+  width: 100%;
+  padding: 12px;
+  background-color: #02385c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background 0.3s ease;
+}
+
+.register-box button:hover {
+  background-color: #024d80;
+}
