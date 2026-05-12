@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
+    "start": "serve -s build -l $PORT",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -19,13 +19,14 @@
     "jspdf": "^4.2.1",
     "jsqr": "^1.4.0",
     "qrcode.react": "^4.2.0",
-    "react": "^19.2.6",
+    "react": "^18.2.0",
     "react-barcode": "^1.6.1",
     "react-datepicker": "^9.1.0",
-    "react-dom": "^19.2.6",
+    "react-dom": "^18.2.0",
     "react-i18next": "^17.0.7",
     "react-router-dom": "^7.15.0",
     "react-scripts": "^5.0.1",
+    "serve": "^14.2.0",
     "web-vitals": "^5.2.0"
   },
   "browserslist": {
