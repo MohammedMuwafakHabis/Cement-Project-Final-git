@@ -49,7 +49,7 @@
 
 // startServer();
 
-
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
@@ -84,11 +84,9 @@ const buildPath = path.join(__dirname, "../frontend/build");
 
 app.use(express.static(buildPath));
 
-// React fallback route
-app.get("*", (req, res) => {
+app.use((req, res) => {
   res.sendFile(path.join(buildPath, "index.html"));
 });
-
 // Start server after DB check
 async function startServer() {
   try {
